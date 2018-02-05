@@ -1,0 +1,10 @@
+ <div id="barscontainer">
+     <progress value="{{bar}}" [ngClass]="{'overlimit': bar > barslimit}"  max="{{barslimit}}" attr.data-label="{{bar}}%" *ngFor='let bar of barsdata; let i = index;'></progress> 
+ </div>
+ <div class="actions">
+ <select  [(ngModel)]="selectedBar">
+     <option *ngFor="let bar of barsdata; let i = index" [ngValue]="i">Progress {{i + 1}}</option>
+ </select>
+
+ <button *ngFor="let btn of btns" attr.data-val="{{btn}}" (click) ="onChangeProgress($event)">{{btn}}</button>
+ </div>

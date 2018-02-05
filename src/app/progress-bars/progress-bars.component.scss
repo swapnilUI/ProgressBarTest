@@ -1,0 +1,38 @@
+#barscontainer {
+    width:330px;
+    margin: 0 auto;            
+    progress {
+        width: 330px;
+        height: 35px;
+        display: block;
+        margin-bottom: 10px;
+        position: relative;
+        color: #000;
+        background: #fff;
+        border:1px solid #ccc;
+
+        &:before {
+            content: attr(data-label);
+            font-size: 0.8em;
+            vertical-align: 0;
+            font-weight: bold;
+            
+            /*Position text over the progress bar */
+            position:absolute;
+            left:0;
+            right:0;
+            top:10px;
+        }
+        &::-webkit-progress-bar { background: #fff; }
+        &::-webkit-progress-value { background: #0063a6;}
+        &.overlimit::-webkit-progress-bar { background: #fff; }
+        &.overlimit::-webkit-progress-value { background: #f00;}
+    }
+   
+    
+}
+.actions{
+    button {
+        margin-left: 10px
+    } 
+}
